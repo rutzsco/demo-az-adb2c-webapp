@@ -9,7 +9,7 @@ pool:
 variables:
   dockerRegistryServiceConnection: '69afecc5-ac14-478c-af6c-0c1fd1a6e437'
   imageRepository: 'azadb2c/demo-web-ui'
-  dockerfilePath: '$(Build.SourcesDirectory)/Demo.API/Dockerfile'
+  dockerfilePath: '$(Build.SourcesDirectory)/Demo.WebUI/Dockerfile'
   tag: '$(Build.BuildNumber)'
 
 steps:
