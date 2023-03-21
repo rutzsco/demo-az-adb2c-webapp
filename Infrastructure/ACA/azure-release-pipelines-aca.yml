@@ -3,16 +3,16 @@ trigger: none
 resources:
   pipelines:
   - pipeline: build
-    source: 'Simulation API - BUILD'
+    source: 'ADB2C - Demo UI - BUILD'
     
 variables:
   vmImageName: 'ubuntu-latest'
   azureServiceConnection: 'Demo Account'
-  resourceGroupName: 'rutzsco-sim-service-aca'
+  resourceGroupName: 'rutzsco-az-adb2c-demoui-aca'
   location: 'eastus'
-  appName: 'rutzsco-sim-service-aca'
+  appName: 'rutzsco-az-adb2c-demoui'
   environment: 'ci'
-  containerImage: 'rutzscolabcr.azurecr.io/simulation/demo-api:$(resources.pipeline.build.runName)'
+  containerImage: 'rutzscolabcr.azurecr.io/azadb2c/demo-web-ui:$(resources.pipeline.build.runName)'
   templateFile: '$(Pipeline.Workspace)/build/Infrastructure/ACA/main.bicep'
   acrName: 'rutzscolabcr'
   acrUsername: 'rutzscolabcr'
