@@ -17,7 +17,8 @@ namespace Demo.WebUI.Controllers
 
         public IActionResult Index()
         {
-            return View();
+            var vm = new HomeViewModel(this.HttpContext.User.Claims);
+            return View(vm);
         }
 
         public IActionResult Privacy()
