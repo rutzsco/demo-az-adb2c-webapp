@@ -44,5 +44,5 @@ stages:
                 scriptType: bash
                 scriptLocation: inlineScript
                 inlineScript: |
-                  az group create --name ${{ parameters.resourceGroupName }} --location $(region)  
+                  az group create --name ${{ parameters.resourceGroupName }} --location ${{ parameters.region }} 
                   az deployment group create --resource-group ${{ parameters.resourceGroupName }}--template-file ${{ parameters.templateFile }} --parameters appName=${{ parameters.appName }} envName=${{ parameters.environment }} containerImage=${{ parameters.containerImage }} acrName=${{ parameters.acrName }}$(acrName) acrUsername=${{ parameters.acrUsername }}$(acrUsername) acrPassword=${{ parameters.acrPassword }} > outputs.json
