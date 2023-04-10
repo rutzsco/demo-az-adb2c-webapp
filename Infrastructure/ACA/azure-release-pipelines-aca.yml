@@ -16,7 +16,7 @@ variables:
   acrUsername: 'rutzscolabcr'
 
 stages:
-- template: azure-release-pipelines-stage-template.yml
+- template: azure-release-pipelines-aca-stage-template.yml
   parameters:
     stageName: '001'
     environment: 'CI'
@@ -29,7 +29,7 @@ stages:
     acrName: $(acrName)
     acrUsername: $(acrUsername)
     acrPassword: $(acrPassword)
-- template: azure-release-pipelines-stage-template.yml
+- template: azure-release-pipelines-aca-stage-template.yml
   parameters:
     stageName: '001'
     environment: 'CI'
