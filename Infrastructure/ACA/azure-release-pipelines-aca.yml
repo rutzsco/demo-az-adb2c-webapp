@@ -18,7 +18,7 @@ variables:
 stages:
 - template: azure-release-pipelines-aca-stage-template.yml
   parameters:
-    stageName: '001'
+    stageName: 'APP1'
     environment: 'CI'
     azureServiceConnection: $(azureServiceConnection)
     appName: 'rutzsco-az-adb2c-demoui'
@@ -31,7 +31,7 @@ stages:
     acrPassword: $(acrPassword)
 - template: azure-release-pipelines-aca-stage-template.yml
   parameters:
-    stageName: '001'
+    stageName: 'APP2'
     environment: 'CI'
     azureServiceConnection: $(azureServiceConnection)
     appName: 'rutzsco-az-adb2c-demoui-002'
