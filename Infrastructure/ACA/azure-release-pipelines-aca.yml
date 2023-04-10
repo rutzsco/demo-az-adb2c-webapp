@@ -20,7 +20,7 @@ stages:
   parameters:
     stageName: '001'
     environment: 'CI'
-    azureSubscription: $(azureServiceConnection)
+    azureServiceConnection: $(azureServiceConnection)
     appName: 'rutzsco-az-adb2c-demoui'
     resourceGroupName: 'rutzsco-az-adb2c-demoui-aca'
     region: $(location)
@@ -33,7 +33,7 @@ stages:
   parameters:
     stageName: '001'
     environment: 'CI'
-    azureSubscription: $(azureServiceConnection)
+    azureServiceConnection: $(azureServiceConnection)
     appName: 'rutzsco-az-adb2c-demoui-002'
     resourceGroupName: 'rutzsco-az-adb2c-demoui-aca-002'
     region: $(location)
