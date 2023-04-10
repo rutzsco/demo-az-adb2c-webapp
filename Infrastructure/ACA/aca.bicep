@@ -16,8 +16,6 @@ param acrUsername string
 @secure()
 param acrPassword string
 
-var containerImageParts = split(containerImage, ':')
-
 resource containerApp 'Microsoft.App/containerApps@2022-03-01' = {
   name: name
   location: location
@@ -47,12 +45,7 @@ resource containerApp 'Microsoft.App/containerApps@2022-03-01' = {
         {
           image: containerImage
           name: name
-          env: [
-            {
-                name: 'APPLICATION_VERSION'
-                value: containerImageParts[1]
-            }
-        ]
+          env: envVars
         }
       ]
       scale: {

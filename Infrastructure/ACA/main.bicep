@@ -10,6 +10,7 @@ param acrName string
 param azureAdClientId string
 param azureAdSignUpSignInPolicyId string
 var stackname = '${appName}-${envName}'
+var containerImageParts = split(containerImage, ':')
 
 module law 'log-analytics.bicep' = {
 	name: 'log-analytics-workspace'
@@ -45,6 +46,10 @@ module containerApp 'aca.bicep' = {
       {
         name: 'AzureAd__SignUpSignInPolicyId'
         value: azureAdSignUpSignInPolicyId
+      }
+      {
+        name: 'APPLICATION_VERSION'
+        value: containerImageParts[1]
       }
     ]
     useExternalIngress: true
