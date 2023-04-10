@@ -1,0 +1,48 @@
+parameters: 
+- name: stageName
+  default: ''
+- name: environment
+  default: ''
+- name: azureServiceConnection
+  default: ''
+- name: appName
+  default: ''
+- name: resourceGroupName
+  default: ''
+- name: region
+  default: ''
+- name: templateFile
+  default: ''  
+- name: containerImage
+  default: ''  
+- name: acrName
+  default: ''  
+- name: acrUsername
+  default: ''  
+- name: acrPassword
+  default: ''
+
+stages:
+  - stage: ${{ parameters.stageName }}
+    displayName: ${{ parameters.stageName }}
+
+    jobs:
+    - deployment: Deploy
+      displayName: Deploy
+      environment: ${{ parameters.environment }}
+      pool:
+        vmImage: 'ubuntu-latest'
+  
+      strategy:
+        runOnce:
+          deploy:
+  
+           steps:
+            - task: AzureCLI@2
+              inputs:
+                azureSubscription: $(azureServiceConnection)
+                scriptType: bash
+                scriptLocation: inlineScript
+                inlineScript: |
+                  az group create --name ${{ parameters.resourceGroupName }} --location $(region)  
+                  az deployment group create --resource-group ${{ parameters.resourceGroupName }}--template-file ${{ parameters.templateFile }} --parameters appName=${{ parameters.appName }} envName=${{ parameters.environment }} containerImage=${{ parameters.containerImage }} acrName=${{ parameters.acrName }}$(acrName) acrUsername=${{ parameters.acrUsername }}$(acrUsername) acrPassword=${{ parameters.acrPassword }} > outputs.json
