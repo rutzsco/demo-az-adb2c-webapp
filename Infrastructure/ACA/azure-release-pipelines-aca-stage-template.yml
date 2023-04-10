@@ -21,6 +21,10 @@ parameters:
   default: ''  
 - name: acrPassword
   default: ''
+- name: azureAdClientId
+  default: ''
+- name: azureAdSignUpSignInPolicyId
+  default: ''
 
 stages:
   - stage: ${{ parameters.stageName }}
@@ -45,4 +49,4 @@ stages:
                 scriptLocation: inlineScript
                 inlineScript: |
                   az group create --name ${{ parameters.resourceGroupName }} --location ${{ parameters.region }} 
-                  az deployment group create --resource-group ${{ parameters.resourceGroupName }} --template-file ${{ parameters.templateFile }} --parameters appName=${{ parameters.appName }} envName=${{ parameters.environment }} containerImage=${{ parameters.containerImage }} acrName=${{ parameters.acrName }} acrUsername=${{ parameters.acrUsername }} acrPassword=${{ parameters.acrPassword }} > outputs.json
+                  az deployment group create --resource-group ${{ parameters.resourceGroupName }} --template-file ${{ parameters.templateFile }} --parameters appName=${{ parameters.appName }} envName=${{ parameters.environment }} containerImage=${{ parameters.containerImage }} acrName=${{ parameters.acrName }} acrUsername=${{ parameters.acrUsername }} acrPassword=${{ parameters.acrPassword }} azureAdClientId=${{ parameters.azureAdClientId }} azureAdSignUpSignInPolicyId=${{ parameters.azureAdSignUpSignInPolicyId }} > outputs.json

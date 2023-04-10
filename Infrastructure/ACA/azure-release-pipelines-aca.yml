@@ -29,6 +29,8 @@ stages:
     acrName: $(acrName)
     acrUsername: $(acrUsername)
     acrPassword: $(acrPassword)
+    azureAdClientId: '34ce55cc-f02a-40d2-be0d-ac287d7eaae4'
+    azureAdSignUpSignInPolicyId: 'B2C_1_app1_susi'
 - template: azure-release-pipelines-aca-stage-template.yml
   parameters:
     stageName: 'APP2'
@@ -42,3 +44,5 @@ stages:
     acrName: $(acrName)
     acrUsername: $(acrUsername)
     acrPassword: $(acrPassword)
+    azureAdClientId: '7fcc0403-8d91-4e57-83b2-5aafe2bdd582'
+    azureAdSignUpSignInPolicyId: 'B2C_1_app2_susi'

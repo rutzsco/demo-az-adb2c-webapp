@@ -7,6 +7,8 @@ param containerPort int = 80
 param acrPassword string
 param acrUsername string
 param acrName string
+param azureAdClientId string
+param azureAdSignUpSignInPolicyId string
 var stackname = '${appName}-${envName}'
 
 module law 'log-analytics.bicep' = {
@@ -35,7 +37,16 @@ module containerApp 'aca.bicep' = {
     location: location
     containerAppEnvironmentId: containerAppEnvironment.outputs.id
     containerImage: containerImage
-    envVars: []
+    envVars: [
+      {
+        name: 'AzureAd__ClientId'
+        value: azureAdClientId
+      }
+      {
+        name: 'AzureAd__SignUpSignInPolicyId'
+        value: azureAdSignUpSignInPolicyId
+      }
+    ]
     useExternalIngress: true
     containerPort: containerPort
     acrPassword: acrPassword
