@@ -19,7 +19,7 @@ stages:
 - template: azure-release-pipelines-aca-stage-template.yml
   parameters:
     stageName: 'APP1'
-    environment: 'CI'
+    environment: 'ci'
     azureServiceConnection: $(azureServiceConnection)
     appName: 'rutzsco-az-adb2c-demoui'
     resourceGroupName: 'rutzsco-az-adb2c-demoui-aca'
@@ -32,7 +32,7 @@ stages:
 - template: azure-release-pipelines-aca-stage-template.yml
   parameters:
     stageName: 'APP2'
-    environment: 'CI'
+    environment: 'ci'
     azureServiceConnection: $(azureServiceConnection)
     appName: 'rutzsco-az-adb2c-demoui-002'
     resourceGroupName: 'rutzsco-az-adb2c-demoui-aca-002'
