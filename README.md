@@ -1,6 +1,6 @@
 # Identity for Apps with Azure AD B2C
 
-Azure AD B2C is a cloud-based identity and access management solution. It enables developers to manage and secure customer identities and access to applications and resources. It allows organizations to create user flows and customize them to fit their business needs, including sign-up, sign-in, profile management, and password reset. Azure AD B2C supports a wide range of identity providers, including social identity providers such as Facebook, Google, LinkedIn, and Microsoft accounts. It also provides features for multi-factor authentication, fraud detection, and reporting, making it an efficient and secure solution for managing external identities.
+Azure AD B2C is a cloud-based identity and access management solution(IDaaS). It enables developers to manage and secure customer identities and access to applications and resources. It allows organizations to create user flows and customize them to fit their business needs, including sign-up, sign-in, profile management, and password reset. Azure AD B2C supports a wide range of identity providers, including social identity providers such as Facebook, Google, LinkedIn, and Microsoft accounts. It also provides features for multi-factor authentication, fraud detection, and reporting, making it an efficient and secure solution for managing external identities.
 
 ![B2C Overview](https://docs.microsoft.com/en-us/azure/active-directory-b2c/media/overview/scenario-singlesignon.png)
 
