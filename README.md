@@ -4,6 +4,21 @@ Azure AD B2C is a cloud-based identity and access management solution. It enable
 
 ![B2C Overview](https://docs.microsoft.com/en-us/azure/active-directory-b2c/media/overview/scenario-singlesignon.png)
 
+**Key benefits include:**
+
+
+**Easy Integration:** Azure AD B2C is easy to integrate with existing applications and services. Developers can use Azure AD B2C APIs and SDKs to add authentication and authorization functionality to their applications quickly.
+
+**Customization:** Azure AD B2C allows developers to customize user flows and branding to match their application's look and feel. They can create a custom user interface and modify the sign-up, sign-in, and password reset experiences.
+
+**Multi-Factor Authentication:** Azure AD B2C supports multi-factor authentication, providing an additional layer of security to applications. Developers can choose from a range of authentication methods, including SMS, phone call, and email.
+
+**Social Identity Providers:** Azure AD B2C supports social identity providers such as Facebook, Google, LinkedIn, and Microsoft accounts. This feature allows developers to offer users a seamless sign-in experience and avoid creating yet another username and password for the application.
+
+**Scalability:** Azure AD B2C is a cloud-based service that scales automatically to handle traffic and user demand. This feature eliminates the need for developers to worry about infrastructure and allows them to focus on developing the application.
+
+Overall, Azure AD B2C provides a secure and easy-to-use identity and access management solution for developers, enabling them to focus on building great applications instead of worrying about authentication and authorization.
+
 ## Demonstrations
 
 1. Provision a B2C Tenant
